@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cinematic Movie Website Design System */
+
+@layer base {
+  :root {
+    /* Core Colors - Dark Cinema Theme */
+    --background: 220 13% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 19% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 19% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Movie Theme Colors */
+    --primary: 31 100% 55%;  /* Golden yellow like movie tickets */
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 16%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 0 72% 51%;  /* Red like cinema seats */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 16%;
+    --ring: 31 100% 55%;
+
+    --radius: 0.75rem;
+
+    /* Movie-specific colors */
+    --cinema-gold: 31 100% 55%;
+    --cinema-red: 0 72% 51%;
+    --cinema-blue: 217 91% 60%;
+    --cinema-dark: 220 13% 8%;
+    --cinema-darker: 215 25% 6%;
+    --cinema-gray: 215 25% 20%;
+    --cinema-light-gray: 215 20.2% 65.1%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(215 25% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(215 25% 16%), hsl(215 25% 12%));
+    --gradient-gold: linear-gradient(135deg, hsl(31 100% 55%), hsl(45 100% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 72% 51%), hsl(15 80% 55%));
+
+    /* Shadows */
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(250, 204, 21, 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 215 25% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 31 100% 55%;
+    --sidebar-primary-foreground: 220 13% 8%;
+    --sidebar-accent: 215 25% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 31 100% 55%;
+}
+
+/* Scroll Animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.scroll-hidden-left {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.scroll-hidden-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.scroll-hidden-scale {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  .dark {
+    /* Dark mode is the default for this cinema theme */
+    --background: 220 13% 8%;
+    --foreground: 210 40% 98%;
+    --card: 217 19% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 19% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 31 100% 55%;
+    --primary-foreground: 220 13% 8%;
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 16%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 20%;
+    --input: 215 25% 16%;
+    --ring: 31 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    margin: 0;
+    padding: 0;
+    /* Enhanced mobile responsiveness */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Enhanced responsive design for all devices */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 100%;
+  }
+
+  /* Mobile-first responsive breakpoints */
+  @media (max-width: 320px) {
+    .container {
+      @apply px-2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .text-responsive {
+      @apply text-sm;
+    }
+    .grid-responsive {
+      @apply grid-cols-2 gap-2;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .grid-responsive {
+      @apply grid-cols-3 gap-3;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .grid-responsive {
+      @apply grid-cols-4 gap-4;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .grid-responsive {
+      @apply grid-cols-5 gap-6;
+    }
+  }
+
+  /* Touch-friendly interactive elements */
+  @media (max-width: 768px) {
+    button, .btn, a {
+      min-height: 44px;
+      min-width: 44px;
+      @apply inline-flex items-center justify-center;
+    }
+  }
+}
